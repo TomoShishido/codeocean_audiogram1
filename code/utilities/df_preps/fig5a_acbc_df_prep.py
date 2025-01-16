@@ -79,7 +79,7 @@ def Lacdata_point_df(yololabeltxtfile, namewithoutext, tumor_level, img_width, i
     #right red air conduction
     for textline in txtlines:
         target_info = textline.split() #target_info =[label, x, y, w, h]
-        if target_info[0] == '2':# in the case of frame
+        if target_info[0] == '2':# in the case of right air conduction
             # set a processed area roi(left(x1), top(y1), right(x2), bottom(y2))
             point_left = int((float(target_info[1]) - float(target_info[3]) / 2)*img_width)
             left = int((point_left-frame_left)*image_frame_width_factor)
@@ -99,7 +99,7 @@ def Lacdata_point_df(yololabeltxtfile, namewithoutext, tumor_level, img_width, i
     #overlapped air conduction
     for textline in txtlines:
         target_info = textline.split() #target_info =[label, x, y, w, h]
-        if target_info[0] == '6':# in the case of frame
+        if target_info[0] == '6':# in the case of overlapping left and right air conductions
             # set a processed area roi(left(x1), top(y1), right(x2), bottom(y2))
             point_left = int((float(target_info[1]) - float(target_info[3]) / 2)*img_width)
             left = int((point_left-frame_left)*image_frame_width_factor)
@@ -122,7 +122,7 @@ def Lacdata_point_df(yololabeltxtfile, namewithoutext, tumor_level, img_width, i
      #left blue air conduction
     for textline in txtlines:
         target_info = textline.split() #target_info =[label, x, y, w, h]
-        if target_info[0] == '4':# in the case of frame
+        if target_info[0] == '4':# in the case of left air conduction
             # set a processed area roi(left(x1), top(y1), right(x2), bottom(y2))
             point_left = int((float(target_info[1]) - float(target_info[3]) / 2)*img_width)
             left = int((point_left-frame_left)*image_frame_width_factor)
@@ -143,7 +143,7 @@ def Lacdata_point_df(yololabeltxtfile, namewithoutext, tumor_level, img_width, i
     #overlapped air conduction
     for textline in txtlines:
         target_info = textline.split() #target_info =[label, x, y, w, h]
-        if target_info[0] == '6':# in the case of frame
+        if target_info[0] == '6':# in the case of overlapping left and right air conductions
             # set a processed area roi(left(x1), top(y1), right(x2), bottom(y2))
             point_left = int((float(target_info[1]) - float(target_info[3]) / 2)*img_width)
             left = int((point_left-frame_left)*image_frame_width_factor)
@@ -313,7 +313,7 @@ def Racdata_point_df(yololabeltxtfile, namewithoutext, tumor_level, img_width, i
     #right red air conduction
     for textline in txtlines:
         target_info = textline.split() #target_info =[label, x, y, w, h]
-        if target_info[0] == '2':# in the case of frame
+        if target_info[0] == '2':# in the case of right air conduction
             # set a processed area roi(left(x1), top(y1), right(x2), bottom(y2))
             point_left = int((float(target_info[1]) - float(target_info[3]) / 2)*img_width)
             left = int((point_left-frame_left)*image_frame_width_factor)
@@ -333,7 +333,7 @@ def Racdata_point_df(yololabeltxtfile, namewithoutext, tumor_level, img_width, i
     #overlapped air conduction
     for textline in txtlines:
         target_info = textline.split() #target_info =[label, x, y, w, h]
-        if target_info[0] == '6':# in the case of frame
+        if target_info[0] == '6':# in the case of overlapping left and right air conductions
             # set a processed area roi(left(x1), top(y1), right(x2), bottom(y2))
             point_left = int((float(target_info[1]) - float(target_info[3]) / 2)*img_width)
             left = int((point_left-frame_left)*image_frame_width_factor)
@@ -404,7 +404,7 @@ def Racdata_point_df(yololabeltxtfile, namewithoutext, tumor_level, img_width, i
             else:
                 df_template['rp7'] = 0.0
 
-    #left blue bone conduction
+    #lright red bone conduction
     for textline in txtlines:
         target_info = textline.split() #target_info =[label, x, y, w, h]
         if target_info[0] == '3':# in the case of right bone conduction
